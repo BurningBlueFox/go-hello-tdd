@@ -34,4 +34,11 @@ func greetigPrefix(language string) (prefix string) {
 
 func main() {
 	fmt.Println(Hello("Thiago", portuguese))
+
+	origArray := [2]int{1, 2}
+
+	mySlice := origArray[:]
+	mySlice = append(mySlice, 3)
+	origArray[0] = 3
+	fmt.Println(mySlice, origArray)
 }
