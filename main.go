@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-hello-tdd/di"
 )
 
 const portuguese, french, spanish = "portuguese", "french", "spanish"
@@ -41,4 +42,6 @@ func main() {
 	mySlice = append(mySlice, 3)
 	origArray[0] = 3
 	fmt.Println(mySlice, origArray)
+
+	di.GreetToConsole()
 }
