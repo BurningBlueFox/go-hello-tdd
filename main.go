@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"go-hello-tdd/di"
+	"go-hello-tdd/mocking"
+	"os"
 )
 
 const portuguese, french, spanish = "portuguese", "french", "spanish"
@@ -44,4 +46,5 @@ func main() {
 	fmt.Println(mySlice, origArray)
 
 	di.GreetToConsole()
+	mocking.Countdown(os.Stdout)
 }
