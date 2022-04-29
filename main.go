@@ -46,5 +46,5 @@ func main() {
 	fmt.Println(mySlice, origArray)
 
 	di.GreetToConsole()
-	mocking.Countdown(os.Stdout)
+	mocking.Countdown(os.Stdout, &mocking.DefaultSleeper{})
 }
