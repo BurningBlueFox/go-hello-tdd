@@ -1,17 +1,22 @@
 package ctx
 
 import (
+	"context"
 	"fmt"
 	"net/http"
 )
 
 func Server(store Store) http.HandlerFunc {
 	return func(writer http.ResponseWriter, request *http.Request) {
-		fmt.Fprint(writer, store.Fetch())
+		data, err := store.Fetch(request.Context())
+
+		if err != nil {
+			return
+		}
+		fmt.Fprint(writer, data)
 	}
 }
 
 type Store interface {
-	Fetch() string
-	Cancel()
+	Fetch(ctx context.Context) (string, error)
 }
